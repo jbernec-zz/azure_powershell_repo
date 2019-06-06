@@ -1,19 +1,19 @@
-﻿function New-AzureRMServicePrincipalBySelfSignedCert {
+﻿function New-AzureRMSPNBySelfSignedCert {
 
     <#
 .SYNOPSIS
-Custom New-AzureRMServicePrincipalBySelfSignedCert PowerShell function automates the creation of a local self-signed certificate,
+Custom New-AzureRMSPNBySelfSignedCert PowerShell function automates the creation of a local self-signed certificate,
 creates an AzureRM AD Application, uploads the Certificate to Azure and maps the cert credentials to the AD Application.
 
 .DESCRIPTION
-Custom New-AzureRMServicePrincipalBySelfSignedCert PowerShell function automates the creation of a local self-signed certificate,
+Custom New-AzureRMSPNBySelfSignedCert PowerShell function automates the creation of a local self-signed certificate,
 creates an AzureRM AD Application, uploads the Certificate to Azure and maps the cert credentials to the AD Application.
 
 .PARAMETER SubscriptionName
 Subscription Name for the Azure Application.
 
 .EXAMPLE
-New-AzureRMServicePrincipalBySelfSignedCert
+New-AzureRMSPNBySelfSignedCert
 
 .FUNCTIONALITY
         PowerShell Language
@@ -136,7 +136,7 @@ New-AzureRMRoleAssignmentforCertBasedSPN -adAppId $returnedAppId.adAppId -role "
 
 #region Function Calls
 
-$returnedAppId = New-AzureRMServicePrincipalBySelfSignedCert
+$returnedAppId = New-AzureRMSPNBySelfSignedCert
 "AppId is: " + $returnedAppId.adAppId
 New-AzureRMRoleAssignmentforCertBasedSPN -adAppId $returnedAppId.adAppId -role "Reader"
 

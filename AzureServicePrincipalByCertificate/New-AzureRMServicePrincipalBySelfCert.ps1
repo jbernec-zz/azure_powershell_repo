@@ -23,7 +23,7 @@ New-AzureRMSPNBySelfSignedCert
 
     param(
         [parameter(Mandatory = $false)]
-        [string]$SubscriptionName = "Sandbox01"  
+        [string]$SubscriptionName = "SandboxCloud"  
     )
     Select-AzureRmSubscription -SubscriptionName $SubscriptionName
 
